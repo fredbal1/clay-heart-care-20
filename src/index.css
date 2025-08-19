@@ -1,0 +1,360 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* AnimaHub Design System - Soft Claymorphism Émotionnel */
+
+@layer base {
+  :root {
+    /* Thème Clair - "Atelier Lumineux" */
+    --background: 37 25% 89%; /* #F3E9DC beige chaud */
+    --foreground: 27 22% 29%; /* #574138 marron foncé */
+    --surface: 37 25% 91%; /* surface légèrement plus claire */
+    
+    --primary: 210 18% 55%; /* #7B8FA1 bleu-gris doux */
+    --primary-foreground: 37 25% 89%;
+    
+    --secondary: 162 19% 55%; /* #84A59D vert sauge */
+    --secondary-foreground: 27 22% 29%;
+    
+    --accent: 6 75% 76%; /* #F4978E saumon */
+    --accent-foreground: 27 22% 29%;
+    
+    --success: 162 19% 55%;
+    --success-foreground: 27 22% 29%;
+    
+    --warning: 6 75% 76%;
+    --warning-foreground: 27 22% 29%;
+    
+    --error: 0 65% 55%;
+    --error-foreground: 37 25% 89%;
+    
+    --muted: 37 15% 85%;
+    --muted-foreground: 27 15% 45%;
+    
+    --border: 37 15% 82%;
+    --input: 37 15% 82%;
+    --ring: 210 18% 55%;
+    
+    --card: 37 25% 91%;
+    --card-foreground: 27 22% 29%;
+    
+    --popover: 37 25% 93%;
+    --popover-foreground: 27 22% 29%;
+    
+    --radius: 24px; /* Radius généreux pour l'effet "pâte à modeler" */
+    
+    /* Ombres Claymorphism */
+    --shadow-raised: 8px 8px 16px rgba(180, 145, 120, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+    --shadow-pressed: inset 4px 4px 8px rgba(180, 145, 120, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+    --shadow-floating: 12px 12px 24px rgba(180, 145, 120, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.9);
+    --shadow-subtle: 4px 4px 8px rgba(180, 145, 120, 0.15), -2px -2px 4px rgba(255, 255, 255, 0.7);
+  }
+
+  .dark {
+    /* Thème Sombre - "Cocon Nocturne" */
+    --background: 210 39% 15%; /* #1A202C bleu nuit profond */
+    --foreground: 37 25% 89%; /* #F3E9DC beige clair */
+    --surface: 210 35% 18%;
+    
+    --primary: 162 19% 55%; /* #84A59D vert sauge lumineux */
+    --primary-foreground: 210 39% 15%;
+    
+    --secondary: 210 18% 55%; /* #7B8FA1 bleu-gris */
+    --secondary-foreground: 37 25% 89%;
+    
+    --accent: 6 75% 76%; /* #F4978E saumon */
+    --accent-foreground: 210 39% 15%;
+    
+    --success: 162 19% 55%;
+    --success-foreground: 210 39% 15%;
+    
+    --warning: 6 75% 76%;
+    --warning-foreground: 210 39% 15%;
+    
+    --error: 0 65% 55%;
+    --error-foreground: 37 25% 89%;
+    
+    --muted: 210 30% 22%;
+    --muted-foreground: 37 15% 65%;
+    
+    --border: 210 25% 25%;
+    --input: 210 25% 25%;
+    --ring: 162 19% 55%;
+    
+    --card: 210 35% 18%;
+    --card-foreground: 37 25% 89%;
+    
+    --popover: 210 35% 20%;
+    --popover-foreground: 37 25% 89%;
+    
+    /* Ombres Claymorphism pour thème sombre */
+    --shadow-raised: 8px 8px 16px rgba(13, 16, 23, 0.4), -4px -4px 8px rgba(45, 55, 72, 0.3);
+    --shadow-pressed: inset 4px 4px 8px rgba(13, 16, 23, 0.4), inset -2px -2px 4px rgba(45, 55, 72, 0.3);
+    --shadow-floating: 12px 12px 24px rgba(13, 16, 23, 0.5), -6px -6px 12px rgba(45, 55, 72, 0.4);
+    --shadow-subtle: 4px 4px 8px rgba(13, 16, 23, 0.3), -2px -2px 4px rgba(45, 55, 72, 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-['Outfit',sans-serif] antialiased;
+  }
+  
+  /* Fond animé "Blob" */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 20% 80%, hsl(var(--secondary)) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, hsl(var(--accent)) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, hsl(var(--primary)) 0%, transparent 50%);
+    opacity: 0.05;
+    animation: blob-morph 20s ease-in-out infinite;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  /* Styles Claymorphism de base */
+  .clay-raised {
+    box-shadow: var(--shadow-raised);
+    background: hsl(var(--surface));
+    border-radius: var(--radius);
+    transition: all 0.15s ease-out;
+  }
+  
+  .clay-pressed {
+    box-shadow: var(--shadow-pressed);
+    background: hsl(var(--surface));
+    border-radius: var(--radius);
+  }
+  
+  .clay-floating {
+    box-shadow: var(--shadow-floating);
+    background: hsl(var(--surface));
+    border-radius: var(--radius);
+  }
+  
+  .clay-subtle {
+    box-shadow: var(--shadow-subtle);
+    background: hsl(var(--surface));
+    border-radius: var(--radius);
+  }
+  
+  /* États interactifs Claymorphism */
+  .clay-button {
+    @apply clay-raised cursor-pointer select-none;
+  }
+  
+  .clay-button:hover {
+    box-shadow: var(--shadow-floating);
+    transform: translateY(-1px);
+  }
+  
+  .clay-button:active {
+    @apply clay-pressed;
+    transform: translateY(1px);
+  }
+  
+  .clay-button:focus-visible {
+    box-shadow: var(--shadow-raised), 0 0 0 4px hsl(var(--primary) / 0.3);
+  }
+  
+  /* Input fields avec effet creusé */
+  .clay-input {
+    @apply clay-pressed bg-background border-0 focus:outline-none;
+    transition: box-shadow 0.15s ease-out;
+  }
+  
+  .clay-input:focus {
+    box-shadow: var(--shadow-pressed), inset 0 0 0 2px hsl(var(--primary) / 0.5);
+  }
+  
+  /* Cards avec hover tilt */
+  .clay-card {
+    @apply clay-raised;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .clay-card:hover {
+    @apply clay-floating;
+    transform: perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02);
+  }
+  
+  /* Animation de texte "Bubble Up" */
+  .text-bubble-up {
+    animation: bubble-up 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  
+  .text-bubble-up.animate {
+    animation-delay: var(--delay, 0ms);
+  }
+  
+  /* Toggle Switch Claymorphism */
+  .clay-switch {
+    @apply clay-pressed relative inline-flex h-6 w-11 cursor-pointer;
+    transition: all 0.15s ease-out;
+  }
+  
+  .clay-switch-thumb {
+    @apply clay-raised absolute left-0.5 top-0.5 h-5 w-5 rounded-full;
+    transition: all 0.15s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .clay-switch[data-state="checked"] .clay-switch-thumb {
+    transform: translateX(20px);
+    background: hsl(var(--primary));
+  }
+  
+  /* Skeleton avec pulse organique */
+  .clay-skeleton {
+    @apply clay-subtle animate-pulse;
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--surface)) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: clay-skeleton-pulse 2s ease-in-out infinite;
+  }
+  
+  /* FAB avec shadow importante */
+  .clay-fab {
+    @apply clay-floating fixed bottom-6 right-6 h-14 w-14 rounded-full cursor-pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .clay-fab:hover {
+    transform: scale(1.1) translateY(-2px);
+    box-shadow: 16px 16px 32px rgba(180, 145, 120, 0.4), -8px -8px 16px rgba(255, 255, 255, 0.9);
+  }
+  
+  .clay-fab:active {
+    transform: scale(0.95) translateY(1px);
+    @apply clay-pressed;
+  }
+}
+
+@keyframes blob-morph {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+@keyframes bubble-up {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes clay-skeleton-pulse {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes soft-bounce {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(10px);
+  }
+  50% {
+    transform: scale(1.02) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes press-in {
+  0% {
+    transform: scale(1);
+    box-shadow: var(--shadow-raised);
+  }
+  100% {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-pressed);
+  }
+}
+
+@keyframes signature-check {
+  0% {
+    stroke-dasharray: 0 100;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dasharray: 100 0;
+    opacity: 1;
+  }
+}
+
+/* Utilitaires pour les animations */
+.animate-soft-bounce {
+  animation: soft-bounce 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+.animate-press-in {
+  animation: press-in 0.15s ease-out forwards;
+}
+
+.animate-signature-check {
+  animation: signature-check 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+
+/* Support pour prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  body::before {
+    animation: none;
+  }
+  
+  .clay-card:hover {
+    transform: none;
+  }
+}
+
+@layer utilities {
+  /* Scrollbar utilities */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari and Opera */
+  }
+}
