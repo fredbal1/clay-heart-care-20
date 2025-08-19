@@ -19,6 +19,8 @@ import { HealthRecordPage } from "@/pages/health-record/health-record";
 import { JournalPage } from "@/pages/journal/journal";
 import { AnimaBotPage as AnimaBotExpertPage } from "@/pages/animabot/animabot";
 import { AddEventPage } from "@/pages/add/add-event";
+import { StyleguidePage } from "@/pages/styleguide/styleguide";
+import { DesignControlsPage } from "@/pages/design-controls/design-controls";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +33,8 @@ const App = () => (
         <Routes>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/onboarding" element={<OnboardingPage />} />
+          <Route path="/styleguide" element={<StyleguidePage />} />
+          <Route path="/design-controls" element={<DesignControlsPage />} />
           <Route path="/" element={<Layout />}>
             <Route index element={<DashboardPage />} />
             <Route path="animabot" element={<AnimaBotExpertPage />} />

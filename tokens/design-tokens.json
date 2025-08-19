@@ -1,0 +1,328 @@
+
+{
+  "meta": {
+    "version": "1.0.0",
+    "name": "AnimaHub Design System",
+    "description": "Claymorphisme Émotionnel - Tokens pour reproduction fidèle",
+    "author": "Lovable AI",
+    "created": "2024-08-19"
+  },
+  "color": {
+    "light": {
+      "background": {
+        "value": "37 25% 89%",
+        "hex": "#F3E9DC",
+        "usage": "Fond principal thème clair"
+      },
+      "foreground": {
+        "value": "27 22% 29%",
+        "hex": "#574138", 
+        "usage": "Texte principal"
+      },
+      "surface": {
+        "value": "37 25% 91%",
+        "hex": "#F7EDDF",
+        "usage": "Cards, surfaces élevées"
+      },
+      "primary": {
+        "value": "210 18% 55%",
+        "hex": "#7B8FA1",
+        "usage": "Boutons primaires, liens, focus"
+      },
+      "secondary": {
+        "value": "162 19% 55%", 
+        "hex": "#84A59D",
+        "usage": "États succès, nature, apaisement"
+      },
+      "accent": {
+        "value": "6 75% 76%",
+        "hex": "#F4978E", 
+        "usage": "Highlights, CTA secondaires, chaleur"
+      },
+      "success": {
+        "value": "162 19% 55%",
+        "hex": "#84A59D",
+        "usage": "Validation, statuts positifs"
+      },
+      "warning": {
+        "value": "6 75% 76%",
+        "hex": "#F4978E",
+        "usage": "Attention, bientôt échu"
+      },
+      "error": {
+        "value": "0 65% 55%",
+        "hex": "#D14545",
+        "usage": "Erreurs, statuts négatifs"
+      },
+      "muted": {
+        "value": "37 15% 85%",
+        "hex": "#E6DDD1",
+        "usage": "Backgrounds subtils"
+      },
+      "muted-foreground": {
+        "value": "27 15% 45%", 
+        "hex": "#7A6B5F",
+        "usage": "Texte secondaire, métadonnées"
+      },
+      "border": {
+        "value": "37 15% 82%",
+        "hex": "#DDD2C3",
+        "usage": "Bordures, séparateurs"
+      }
+    },
+    "dark": {
+      "background": {
+        "value": "210 39% 15%",
+        "hex": "#1A202C",
+        "usage": "Fond principal thème sombre"
+      },
+      "foreground": {
+        "value": "37 25% 89%",
+        "hex": "#F3E9DC",
+        "usage": "Texte principal sombre"
+      },
+      "surface": {
+        "value": "210 35% 18%",
+        "hex": "#1F2937",
+        "usage": "Cards sombres"
+      },
+      "primary": {
+        "value": "162 19% 55%", 
+        "hex": "#84A59D",
+        "usage": "Primary inversé pour contraste"
+      },
+      "secondary": {
+        "value": "210 18% 55%",
+        "hex": "#7B8FA1", 
+        "usage": "Secondary inversé"
+      }
+    }
+  },
+  "typography": {
+    "fontFamily": {
+      "primary": {
+        "value": "'Outfit', sans-serif",
+        "usage": "Toute l'interface",
+        "weights": [300, 400, 500, 600, 700]
+      }
+    },
+    "fontSize": {
+      "xs": { "value": "0.75rem", "px": "12px" },
+      "sm": { "value": "0.875rem", "px": "14px" },
+      "base": { "value": "1rem", "px": "16px" },
+      "lg": { "value": "1.125rem", "px": "18px" }, 
+      "xl": { "value": "1.25rem", "px": "20px" },
+      "2xl": { "value": "1.5rem", "px": "24px" },
+      "3xl": { "value": "1.875rem", "px": "30px" }
+    },
+    "fontWeight": {
+      "light": 300,
+      "normal": 400, 
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "lineHeight": {
+      "none": 1,
+      "tight": 1.25,
+      "normal": 1.5, 
+      "relaxed": 1.625
+    }
+  },
+  "spacing": {
+    "scale": "4pt",
+    "values": {
+      "1": { "value": "0.25rem", "px": "4px" },
+      "2": { "value": "0.5rem", "px": "8px" },
+      "3": { "value": "0.75rem", "px": "12px" },
+      "4": { "value": "1rem", "px": "16px" },
+      "5": { "value": "1.25rem", "px": "20px" }, 
+      "6": { "value": "1.5rem", "px": "24px" },
+      "8": { "value": "2rem", "px": "32px" },
+      "10": { "value": "2.5rem", "px": "40px" },
+      "12": { "value": "3rem", "px": "48px" },
+      "16": { "value": "4rem", "px": "64px" }
+    }
+  },
+  "radius": {
+    "philosophy": "Claymorphisme généreux",
+    "base": {
+      "value": "24px",
+      "usage": "Radius signature AnimaHub" 
+    },
+    "sm": {
+      "value": "calc(24px - 4px)",
+      "computed": "20px"
+    },
+    "md": {
+      "value": "calc(24px - 2px)", 
+      "computed": "22px"
+    },
+    "lg": {
+      "value": "24px",
+      "usage": "Cards, buttons principaux"
+    },
+    "full": {
+      "value": "9999px",
+      "usage": "Avatars, badges ronds"
+    }
+  },
+  "shadows": {
+    "system": "Double éclairage claymorphisme",
+    "raised": {
+      "value": "8px 8px 16px rgba(180, 145, 120, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8)",
+      "usage": "État normal surfaces"
+    },
+    "pressed": {
+      "value": "inset 4px 4px 8px rgba(180, 145, 120, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8)",
+      "usage": "Inputs, boutons pressés"
+    },
+    "floating": {
+      "value": "12px 12px 24px rgba(180, 145, 120, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.9)", 
+      "usage": "Hover, FAB, éléments flottants"
+    },
+    "subtle": {
+      "value": "4px 4px 8px rgba(180, 145, 120, 0.15), -2px -2px 4px rgba(255, 255, 255, 0.7)",
+      "usage": "Petits éléments, badges"
+    },
+    "dark": {
+      "raised": {
+        "value": "8px 8px 16px rgba(13, 16, 23, 0.4), -4px -4px 8px rgba(45, 55, 72, 0.3)",
+        "usage": "Raised pour thème sombre"
+      }
+    }
+  },
+  "animation": {
+    "duration": {
+      "instant": "0ms",
+      "micro": "150ms",
+      "fast": "220ms", 
+      "normal": "300ms",
+      "slow": "450ms",
+      "feature": "600ms"
+    },
+    "easing": {
+      "linear": "linear",
+      "ease-in": "cubic-bezier(0.4, 0, 1, 1)",
+      "ease-out": "cubic-bezier(0, 0, 0.2, 1)",
+      "ease-in-out": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      "clay": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "signature": {
+      "bubble-up": {
+        "duration": "600ms",
+        "easing": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "usage": "Titres, textes importants"
+      },
+      "soft-bounce": {
+        "duration": "400ms", 
+        "easing": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "usage": "Entrée cards, widgets"
+      },
+      "clay-card-hover": {
+        "duration": "300ms",
+        "easing": "cubic-bezier(0.4, 0, 0.2, 1)", 
+        "transform": "perspective(1000px) rotateX(2deg) rotateY(2deg) scale(1.02)"
+      }
+    }
+  },
+  "zIndex": {
+    "base": 0,
+    "docked": 10,
+    "dropdown": 1000,
+    "modal": 1050,
+    "popover": 1100, 
+    "toast": 1200,
+    "tooltip": 1300
+  },
+  "breakpoints": {
+    "mobile": {
+      "min": "0px",
+      "max": "767px",
+      "usage": "Touch-first, 1 colonne"
+    },
+    "tablet": {
+      "min": "768px",
+      "max": "1023px", 
+      "usage": "2-3 colonnes, sidebar conditionnelle"
+    },
+    "desktop": {
+      "min": "1024px",
+      "max": "∞",
+      "usage": "Sidebar fixe, 3-4 colonnes, hover states"
+    }
+  },
+  "components": {
+    "pet-avatar": {
+      "size": {
+        "value": "96px",
+        "variable": "--pet-card-avatar-size",
+        "control": "design-controls slider 64px-128px"
+      },
+      "shape": {
+        "value": "circle", 
+        "options": ["circle", "rounded", "pill", "square"],
+        "variable": "--pet-card-avatar-shape"
+      },
+      "location": "Dashboard top-right, PetSwitcher component"
+    },
+    "account-avatar": {
+      "size": {
+        "value": "40px",
+        "variable": "--account-avatar-size" 
+      },
+      "border": {
+        "width": "2px",
+        "color": "hsl(var(--primary))",
+        "variables": ["--account-avatar-border", "--account-avatar-border-color"]
+      },
+      "location": "Sidebar navigation, bottom-left"
+    },
+    "fab": {
+      "size": {
+        "value": "56px",
+        "variable": "--fab-size"
+      },
+      "background": {
+        "value": "hsl(var(--primary))",
+        "variable": "--fab-bg"
+      },
+      "position": "fixed bottom-6 right-6",
+      "location": "Dashboard bottom-right, AnimaBot trigger"
+    },
+    "status-dot": {
+      "size": {
+        "value": "8px", 
+        "variable": "--status-dot-size"
+      },
+      "color": {
+        "value": "hsl(var(--success))",
+        "variable": "--status-dot-color"
+      },
+      "glow": {
+        "value": "0 0 8px hsl(var(--success) / 0.5)",
+        "variable": "--status-dot-glow"
+      },
+      "location": "Dashboard header, left of 'Bonjour Clara'"
+    },
+    "grid": {
+      "mobile-cols": {
+        "value": "1",
+        "variable": "--grid-mobile-cols"
+      },
+      "tablet-cols": {
+        "value": "2",
+        "variable": "--grid-tablet-cols" 
+      },
+      "desktop-cols": {
+        "value": "3",
+        "variable": "--grid-desktop-cols"
+      },
+      "gap": {
+        "value": "var(--space-6)",
+        "computed": "24px"
+      }
+    }
+  }
+}

@@ -1,0 +1,298 @@
+
+/* AnimaHub Design System - Variables CSS Mirror */
+/* Généré automatiquement depuis tokens/design-tokens.json */
+
+:root {
+  /* ===== COULEURS THÈME CLAIR ===== */
+  --background: 37 25% 89%;                    /* #F3E9DC - Beige chaud */
+  --foreground: 27 22% 29%;                    /* #574138 - Marron foncé */
+  --surface: 37 25% 91%;                       /* #F7EDDF - Surface élevée */
+  
+  --primary: 210 18% 55%;                      /* #7B8FA1 - Bleu-gris doux */
+  --primary-foreground: 37 25% 89%;
+  
+  --secondary: 162 19% 55%;                    /* #84A59D - Vert sauge */
+  --secondary-foreground: 27 22% 29%;
+  
+  --accent: 6 75% 76%;                         /* #F4978E - Saumon */
+  --accent-foreground: 27 22% 29%;
+  
+  --success: 162 19% 55%;                      /* Vert sauge */
+  --success-foreground: 27 22% 29%;
+  
+  --warning: 6 75% 76%;                        /* Saumon */
+  --warning-foreground: 27 22% 29%;
+  
+  --error: 0 65% 55%;                          /* #D14545 - Rouge chaleureux */
+  --error-foreground: 37 25% 89%;
+  
+  --muted: 37 15% 85%;                         /* #E6DDD1 - Gris beige */
+  --muted-foreground: 27 15% 45%;              /* #7A6B5F - Texte secondaire */
+  
+  --border: 37 15% 82%;                        /* #DDD2C3 - Bordures */
+  --input: 37 15% 82%;
+  --ring: 210 18% 55%;                         /* Focus ring = primary */
+  
+  --card: 37 25% 91%;
+  --card-foreground: 27 22% 29%;
+  
+  --popover: 37 25% 93%;
+  --popover-foreground: 27 22% 29%;
+  
+  /* ===== RAYON CLAYMORPHISME ===== */
+  --radius: 24px;                              /* Signature généreuse */
+  
+  /* ===== OMBRES DOUBLE ÉCLAIRAGE ===== */
+  --shadow-raised: 8px 8px 16px rgba(180, 145, 120, 0.2), -4px -4px 8px rgba(255, 255, 255, 0.8);
+  --shadow-pressed: inset 4px 4px 8px rgba(180, 145, 120, 0.2), inset -2px -2px 4px rgba(255, 255, 255, 0.8);
+  --shadow-floating: 12px 12px 24px rgba(180, 145, 120, 0.3), -6px -6px 12px rgba(255, 255, 255, 0.9);
+  --shadow-subtle: 4px 4px 8px rgba(180, 145, 120, 0.15), -2px -2px 4px rgba(255, 255, 255, 0.7);
+  
+  /* ===== TYPOGRAPHIE ===== */
+  --font-family-primary: 'Outfit', sans-serif;
+  
+  --font-size-xs: 0.75rem;                     /* 12px */
+  --font-size-sm: 0.875rem;                    /* 14px */
+  --font-size-base: 1rem;                      /* 16px */
+  --font-size-lg: 1.125rem;                    /* 18px */
+  --font-size-xl: 1.25rem;                     /* 20px */
+  --font-size-2xl: 1.5rem;                     /* 24px */
+  --font-size-3xl: 1.875rem;                   /* 30px */
+  
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  
+  /* ===== ESPACEMENT ÉCHELLE 4PT ===== */
+  --space-1: 0.25rem;                          /* 4px */
+  --space-2: 0.5rem;                           /* 8px */
+  --space-3: 0.75rem;                          /* 12px */
+  --space-4: 1rem;                             /* 16px */
+  --space-5: 1.25rem;                          /* 20px */
+  --space-6: 1.5rem;                           /* 24px */
+  --space-8: 2rem;                             /* 32px */
+  --space-10: 2.5rem;                          /* 40px */
+  --space-12: 3rem;                            /* 48px */
+  --space-16: 4rem;                            /* 64px */
+  
+  /* ===== ANIMATIONS ===== */
+  --duration-instant: 0ms;
+  --duration-micro: 150ms;
+  --duration-fast: 220ms;
+  --duration-normal: 300ms;
+  --duration-slow: 450ms;
+  --duration-feature: 600ms;
+  
+  --ease-linear: linear;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-clay: cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* ===== Z-INDEX ===== */
+  --z-base: 0;
+  --z-docked: 10;
+  --z-dropdown: 1000;
+  --z-modal: 1050;
+  --z-popover: 1100;
+  --z-toast: 1200;
+  --z-tooltip: 1300;
+  
+  /* ===== COMPOSANTS SPÉCIALISÉS ANIMAHUB ===== */
+  
+  /* Avatar Animal (Dashboard top-right) */
+  --pet-card-avatar-size: 96px;
+  --pet-card-avatar-shape: circle;              /* circle | rounded | pill | square */
+  --pet-card-avatar-border: 3px;
+  --pet-card-avatar-border-color: hsl(var(--border));
+  
+  /* Avatar Compte (Navigation bas gauche) */
+  --account-avatar-size: 40px;
+  --account-avatar-border: 2px;
+  --account-avatar-border-color: hsl(var(--primary));
+  
+  /* FAB IA (Bottom-right floating) */
+  --fab-size: 56px;
+  --fab-bg: hsl(var(--primary));
+  --fab-bg-hover: hsl(var(--primary) / 0.9);
+  --fab-icon-color: hsl(var(--primary-foreground));
+  --fab-shadow: var(--shadow-floating);
+  
+  /* Status Dot (Header "Bonjour Clara") */
+  --status-dot-size: 8px;
+  --status-dot-color: hsl(var(--success));
+  --status-dot-glow: 0 0 8px hsl(var(--success) / 0.5);
+  
+  /* Grilles Responsives */
+  --grid-mobile-cols: 1;
+  --grid-tablet-cols: 2;
+  --grid-desktop-cols: 3;
+  --grid-gap: var(--space-6);
+  
+  /* Cards & Layout */
+  --card-padding: var(--space-6);               /* 24px */
+  --card-gap: var(--space-4);                   /* 16px entre cards */
+  --container-max-width: 1280px;
+}
+
+/* ===== THÈME SOMBRE ===== */
+.dark {
+  --background: 210 39% 15%;                    /* #1A202C - Bleu nuit profond */
+  --foreground: 37 25% 89%;                     /* #F3E9DC - Beige clair */
+  --surface: 210 35% 18%;                       /* #1F2937 - Surface sombre */
+  
+  --primary: 162 19% 55%;                       /* Vert sauge lumineux */
+  --primary-foreground: 210 39% 15%;
+  
+  --secondary: 210 18% 55%;                     /* Bleu-gris */
+  --secondary-foreground: 37 25% 89%;
+  
+  --accent: 6 75% 76%;                          /* Saumon */
+  --accent-foreground: 210 39% 15%;
+  
+  --success: 162 19% 55%;
+  --success-foreground: 210 39% 15%;
+  
+  --warning: 6 75% 76%;
+  --warning-foreground: 210 39% 15%;
+  
+  --error: 0 65% 55%;
+  --error-foreground: 37 25% 89%;
+  
+  --muted: 210 30% 22%;
+  --muted-foreground: 37 15% 65%;
+  
+  --border: 210 25% 25%;
+  --input: 210 25% 25%;
+  --ring: 162 19% 55%;
+  
+  --card: 210 35% 18%;
+  --card-foreground: 37 25% 89%;
+  
+  --popover: 210 35% 20%;
+  --popover-foreground: 37 25% 89%;
+  
+  /* Ombres pour thème sombre */
+  --shadow-raised: 8px 8px 16px rgba(13, 16, 23, 0.4), -4px -4px 8px rgba(45, 55, 72, 0.3);
+  --shadow-pressed: inset 4px 4px 8px rgba(13, 16, 23, 0.4), inset -2px -2px 4px rgba(45, 55, 72, 0.3);
+  --shadow-floating: 12px 12px 24px rgba(13, 16, 23, 0.5), -6px -6px 12px rgba(45, 55, 72, 0.4);
+  --shadow-subtle: 4px 4px 8px rgba(13, 16, 23, 0.3), -2px -2px 4px rgba(45, 55, 72, 0.2);
+}
+
+/* ===== CLASSES UTILITAIRES ===== */
+
+/* Application des variables aux composants */
+.pet-card-avatar {
+  width: var(--pet-card-avatar-size);
+  height: var(--pet-card-avatar-size);
+  border: var(--pet-card-avatar-border) solid var(--pet-card-avatar-border-color);
+}
+
+.pet-card-avatar.shape-circle {
+  border-radius: 50%;
+}
+
+.pet-card-avatar.shape-rounded {
+  border-radius: var(--radius);
+}
+
+.pet-card-avatar.shape-pill {
+  border-radius: 9999px;
+}
+
+.pet-card-avatar.shape-square {
+  border-radius: 8px;
+}
+
+.account-avatar {
+  width: var(--account-avatar-size);
+  height: var(--account-avatar-size);
+  border: var(--account-avatar-border) solid var(--account-avatar-border-color);
+}
+
+.clay-fab {
+  width: var(--fab-size);
+  height: var(--fab-size);
+  background: var(--fab-bg);
+  color: var(--fab-icon-color);
+  box-shadow: var(--fab-shadow);
+}
+
+.clay-fab:hover {
+  background: var(--fab-bg-hover);
+}
+
+.status-dot {
+  width: var(--status-dot-size);
+  height: var(--status-dot-size);
+  background: var(--status-dot-color);
+  border-radius: 50%;
+  box-shadow: var(--status-dot-glow);
+}
+
+/* Grilles responsives */
+.responsive-grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(var(--grid-mobile-cols), 1fr);
+}
+
+@media (min-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(var(--grid-tablet-cols), 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(var(--grid-desktop-cols), 1fr);
+  }
+}
+
+/* Espacement responsive */
+.responsive-padding {
+  padding: var(--space-4);                      /* Mobile: 16px */
+}
+
+@media (min-width: 768px) {
+  .responsive-padding {
+    padding: var(--space-6);                    /* Tablet: 24px */
+  }
+}
+
+@media (min-width: 1024px) {
+  .responsive-padding {
+    padding: var(--space-8);                    /* Desktop: 32px */
+  }
+}
+
+/* Container avec max-width */
+.container-responsive {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+/* Transitions par défaut */
+.theme-transition {
+  transition: 
+    background-color var(--duration-normal) var(--ease-out),
+    border-color var(--duration-normal) var(--ease-out),
+    color var(--duration-normal) var(--ease-out),
+    box-shadow var(--duration-normal) var(--ease-out);
+}
+
+/* Utilisation font-family */
+body {
+  font-family: var(--font-family-primary);
+}
