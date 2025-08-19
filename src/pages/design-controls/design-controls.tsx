@@ -20,7 +20,7 @@ import {
 
 interface DesignToken {
   key: string
-  value: string | number
+  value: string | number | boolean
   type: 'color' | 'size' | 'select' | 'range' | 'switch'
   min?: number
   max?: number
@@ -241,7 +241,7 @@ const categories = [
 ]
 
 export function DesignControlsPage() {
-  const [tokens, setTokens] = useState<Record<string, any>>({})
+  const [tokens, setTokens] = useState<Record<string, string | number | boolean>>({})
   const [selectedCategory, setSelectedCategory] = useState('avatars')
   const [darkMode, setDarkMode] = useState(false)
   const [previewDevice, setPreviewDevice] = useState<'mobile' | 'tablet' | 'desktop'>('desktop')
@@ -251,7 +251,7 @@ export function DesignControlsPage() {
     const root = document.documentElement
     const computedStyle = getComputedStyle(root)
     
-    const initialTokens: Record<string, any> = {}
+    const initialTokens: Record<string, string | number | boolean> = {}
     designTokens.forEach(token => {
       if (token.type === 'color') {
         initialTokens[token.key] = token.value
@@ -267,7 +267,7 @@ export function DesignControlsPage() {
   }, [])
 
   // Apply token changes to CSS variables
-  const updateToken = (key: string, value: any) => {
+  const updateToken = (key: string, value: string | number | boolean) => {
     setTokens(prev => ({ ...prev, [key]: value }))
     
     const token = designTokens.find(t => t.key === key)
@@ -276,7 +276,7 @@ export function DesignControlsPage() {
     const root = document.documentElement
     
     if (token.type === 'color') {
-      root.style.setProperty(token.cssVariable, value)
+      root.style.setProperty(token.cssVariable, value as string)
     } else if (token.type === 'size' || token.type === 'range') {
       const unit = token.unit || ''
       root.style.setProperty(token.cssVariable, `${value}${unit}`)
@@ -338,7 +338,7 @@ export function DesignControlsPage() {
         const importedData = JSON.parse(e.target?.result as string)
         if (importedData.tokens) {
           Object.entries(importedData.tokens).forEach(([key, value]) => {
-            updateToken(key, value)
+            updateToken(key, value as string | number | boolean)
           })
         }
       } catch (error) {
@@ -366,7 +366,7 @@ export function DesignControlsPage() {
               min={token.min}
               max={token.max}
               step={token.step}
-              value={value}
+              value={value as number}
               onChange={(e) => updateToken(token.key, Number(e.target.value))}
               className="w-full h-2 bg-muted rounded-clay appearance-none cursor-pointer clay-slider"
             />
@@ -387,13 +387,13 @@ export function DesignControlsPage() {
             <div className="flex items-center gap-3">
               <input
                 type="color"
-                value={value}
+                value={value as string}
                 onChange={(e) => updateToken(token.key, e.target.value)}
                 className="w-12 h-12 rounded-clay border-2 border-border cursor-pointer"
               />
               <div className="flex-1">
                 <ClayInput
-                  value={value}
+                  value={value as string}
                   onChange={(e) => updateToken(token.key, e.target.value)}
                   placeholder="#HEXCODE"
                   className="font-mono text-sm"
@@ -411,7 +411,7 @@ export function DesignControlsPage() {
           <div className="space-y-2">
             <label className="text-sm font-medium">{token.description}</label>
             <select
-              value={value}
+              value={value as string}
               onChange={(e) => updateToken(token.key, e.target.value)}
               className="w-full clay-input"
             >
@@ -433,7 +433,7 @@ export function DesignControlsPage() {
             <div className="flex items-center justify-between">
               <label className="text-sm font-medium">{token.description}</label>
               <ClaySwitch
-                checked={value}
+                checked={value as boolean}
                 onCheckedChange={(checked) => updateToken(token.key, checked)}
               />
             </div>
